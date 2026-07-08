@@ -1,4 +1,5 @@
 import java.util.*;
+
 class Node{
     int data;
     Node left;
@@ -9,25 +10,29 @@ class Node{
         this.right = null;
     }
 }
+
 public class Main{
-    static List<Integer> preorder(Node root){
-        ArrayList<Integer> result = new ArrayList<>();
-        if(root == null)return result;
+    static List<Integer> IterativeInOrder(Node root){
+        List<Integer> res = new ArrayList<>();
         Stack<Node> st = new Stack<>();
-        st.push(root);
-        while(!st.isEmpty()){
-            root = st.pop();
-            result.add(root.data);
-            if(root.right!=null)st.push(root.right);
-            if(root.left != null)st.push(root.left);
-            
+        Node curr =root;
+        while(curr!=null || !st.isEmpty()){
+            while(curr!=null){
+                st.push(curr);
+                curr = curr.left;
+            }
+            curr = st.pop();
+            res.add(curr.data);
+            curr = curr.right;
         }
-        return result;
+        return res;
     }
+    
 	public static void main(String[] args) {
-	    Node root = new Node(1);
-	    root.left = new Node(2);
-	    root.left.right = new Node(3);
-	    System.out.print(preorder(root));
+	    Node root = new Node(12);
+	    root.left = new Node(32);
+	    root.right = new Node(56);
+	    root.left.right = new Node(89);
+	    System.out.print(IterativeInOrder(root));
 	}
 }

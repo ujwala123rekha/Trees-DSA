@@ -18,6 +18,7 @@ class Pair {
 
 public class Solution {
     public void preInPostTraversal(TreeNode root) {
+        if(root == null) return;
         Stack<Pair> st = new Stack<Pair>();
         st.push(new Pair(root, 1));
         
@@ -25,7 +26,6 @@ public class Solution {
         List<Integer> in = new ArrayList<>();
         List<Integer> post = new ArrayList<>();
         
-        if(root == null) return;
         
         while(!st.isEmpty()) {
             Pair it = st.pop();

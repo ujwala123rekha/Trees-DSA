@@ -13,7 +13,7 @@ public class Main{
     if(root == null)return;
      System.out.print(root.data);
      preorder(root.left);
-    preorder(root.right);
+     preorder(root.right);
   }
  public static void main(String[] args){
    Node root = new Node(1);

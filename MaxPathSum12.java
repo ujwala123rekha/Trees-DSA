@@ -12,7 +12,6 @@ class Node{
 public class Main{
     static int[] maxi = {Integer.MIN_VALUE};
     public static int maximumPath(Node root) {
-        
         maxPath(root,maxi);
         return maxi[0];
     }

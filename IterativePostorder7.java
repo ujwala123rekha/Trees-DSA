@@ -20,7 +20,7 @@ public class Main{
             root = st1.pop();
             st2.push(root);
             if(root.left != null)st1.push(root.left);
-            if(root.right != null)st2.push(root.right);
+            if(root.right != null)st1.push(root.right);
             
         }
         while(!st2.isEmpty()){

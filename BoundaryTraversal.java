@@ -31,6 +31,9 @@ public class Main
             if(curr.right!=null)curr = curr.right;
             else curr= curr.left;
         }
+		for (int i = temp.size() - 1; i >= 0; i--) {
+        ans.add(temp.get(i));
+        }
     }
     static void addLeaf(Node root,ArrayList<Integer>ans){
         if(isLeaf(root)){
